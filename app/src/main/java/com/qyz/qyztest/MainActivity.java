@@ -1,25 +1,33 @@
 package com.qyz.qyztest;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.LinearLayout;
+
+import com.qyz.qyztest.view.ArcView;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    private LinearLayout rootLi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initView();
     }
+
+    private void initView() {
+        rootLi = (LinearLayout) findViewById(R.id.root_ll);
+        ArcView arcView = new ArcView(this);
+        arcView.setarc(18,20);
+        rootLi.addView(arcView);
+    }
+
 
     public void compoundView(View view) {
-        startActivity(new Intent(this,CompoundViewTest.class));
     }
-
 }

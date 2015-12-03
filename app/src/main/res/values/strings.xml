@@ -2,4 +2,6 @@
     <string name="app_name">QyzTest</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_compound_view_test">CompoundViewTest</string>
+    <string name="title_activity_svg">SVGActivity</string>
+    <string name="title_activity_alarm_manager_test">AlarmManagerTest</string>
 </resources>
