@@ -2,7 +2,6 @@ package com.qyz.qyztest;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.LinearLayout;
 
 import com.qyz.qyztest.view.ArcView;
@@ -23,11 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         rootLi = (LinearLayout) findViewById(R.id.root_ll);
         ArcView arcView = new ArcView(this);
-        arcView.setarc(18,20);
+        arcView.setarc(13,20);
         rootLi.addView(arcView);
-    }
-
-
-    public void compoundView(View view) {
     }
 }

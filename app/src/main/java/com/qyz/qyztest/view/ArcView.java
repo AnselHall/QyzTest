@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.view.View;
 
 public class ArcView extends View {
 
+    private static final String TAG = "tag";
     private Paint paint;
     private int height, width;
     private int angel;
@@ -57,7 +59,7 @@ public class ArcView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        Log.e("Paragrame", "w = " + w + "h = " + h + "oldw = " + oldw + "oldh = " + oldh);
+//        Log.e("Paragrame", "w = " + w + "h = " + h + "oldw = " + oldw + "oldh = " + oldh);
         if (w >= h) {
             w = h;
         }
@@ -85,9 +87,21 @@ public class ArcView extends View {
         paint.setStrokeWidth(width / 15);
         canvas.drawArc(oval, 360, angel, false, paint);
 
-        txPaint.setColor(Color.GREEN);
-        txPaint.setTextSize(50.0f);
-        canvas.drawText("8", width / 4, height / 2, txPaint);
+        txPaint.setColor(Color.WHITE);
+        txPaint.setTextSize(200.0f);
+
+        float textSize = txPaint.getTextSize();
+
+        String seven = "7";
+        Rect rect = new Rect();
+        txPaint.getTextBounds(seven,0,1,rect);
+
+        int height = rect.height();
+        int width = rect.width();
+        Log.e(TAG, "onDraw: width" + width );
+        Log.e(TAG, "onDraw: height"+ height);
+
+        canvas.drawText(seven, this.width / 2 - width / 2, this.height / 2 + height / 2, txPaint);
     }
 
 }
