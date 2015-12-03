@@ -1,6 +1,7 @@
 package com.qyz.qyztest;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 
@@ -10,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private LinearLayout rootLi;
+    private ArcView arcView;
+    private int a = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +24,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         rootLi = (LinearLayout) findViewById(R.id.root_ll);
-        ArcView arcView = new ArcView(this);
-        arcView.setarc(13,20);
+        arcView = new ArcView(this);
+
+        //设置分子
+        arcView.setNumerator(18);
+
+        //设置分母
+        arcView.setDenominator(31);
         rootLi.addView(arcView);
     }
 }
