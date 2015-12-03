@@ -102,6 +102,10 @@ public class ArcView extends View {
         Log.e(TAG, "onDraw: height"+ height);
 
         canvas.drawText(seven, this.width / 2 - width / 2, this.height / 2 + height / 2, txPaint);
+
+        Paint linePaint = new Paint();
+        linePaint.setColor(Color.GREEN);
+        canvas.drawLine(this.width / 2 + width / 2 + 10,this.height / 2 + height / 2,this.width / 2 + width / 2 + 50,this.height / 2 + height / 2 - 50,linePaint);
     }
 
 }
